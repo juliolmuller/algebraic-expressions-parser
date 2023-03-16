@@ -1,0 +1,18 @@
+{
+  "name": "poc-calculator",
+  "version": "0.1.0",
+  "description": "A string parser for math expressions.",
+  "license": "MIT",
+  "authors": [
+    "Julio L. Muller"
+  ],
+  "main": "src/index.js",
+  "type": "module",
+  "dependencies": {
+    "expression-calculator": "^1.0.8",
+    "mathjs": "^11.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
