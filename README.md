@@ -2,7 +2,7 @@
 
 A basic proof-of-concept (POC) project in order to analyze a solution for stringified math expressions with support to helper functions for complex operations.
 
-## :hammer: Configuring the Project
+## ⚒️ Configuring the Project
 
 After cloning this repository, run the following command in a terminal, to install external packages the project depends on:
 
@@ -10,7 +10,31 @@ After cloning this repository, run the following command in a terminal, to insta
 $ npm install
 ```
 
-## :rocket: Execute the Program
+## ⚙️ Supported Functions
+
+- **IF** - based on a boolean condition test, use an expression or another:
+  ```
+  IF(
+    condition: boolean,
+    then: number | Expression,
+    otherwise: number | Expression,
+  )
+  ```
+  
+- **SWITCH** - cumulative sum the output of various expressions after the first condition met:
+  ```
+  SWITCH(
+    condition1: boolean,
+    then1: number | Expression,
+    ...[
+      conditionN: boolean, 
+      thenN: number | Expression,
+    ],
+    default?: number,
+  )
+  ```
+
+## 🚀 Execute the Program
 
 This POC was implemented as a CLI application, although the core functionality is isolated in other modules. In the root directory, you'll need to provide an expression and, if there are any variables to be ejected, state afterwards using the notation `var_name=var_value`:
 
@@ -101,7 +125,16 @@ $ node . "SWITCH(
 # output: 980
 ```
 
-## :gear: Supported Functions
+## 📑 Pros & Cons
 
-- `IF(condition: boolean, then: number, otherwise: number)`
-- `SWITCH(cond1: boolean, then1: number, ...[condN: boolean, thenN: number], default?: number)`
+- 🟩 One single backend logic/structure;
+- 🟩 One single value to store (a plain string);
+- 🟩 Different input logics (tariff types) will be restricted only to UI;
+- 🟩 Providing a custom universal way to write a formula/calculation will unlock users "forever";
+- 🟩 Scaling in backend would be restrict to writing utility formulas for the algorithm;
+- 🟥 Copling to an external library;
+- 🟥 Using `math.js`, each compilation and calculation takes 15 to 20 milliseconds;
+  - Can we store compiled algorithms?
+  - Can we use compiled expressions during multiple calculations use case?
+- 🟥 It will require a huge UI component for code input, providing autocomplete for variables and functions, code highlight and syntax checking;
+
